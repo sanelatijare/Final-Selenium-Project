@@ -77,6 +77,8 @@ public class BasePage {
 		//select element by index
 		selectMonth.selectByIndex(index);
 	}
-
+     public List<WebElement>getElements(By locator){
+		return SharedSD.getDriver().findElements(locator);
+}
 
 }

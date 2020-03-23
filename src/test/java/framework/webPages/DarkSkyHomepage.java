@@ -49,7 +49,12 @@ public class DarkSkyHomepage extends BasePage{
         }
 
         public void clickOnExpand(){
-            clickOn(expandTdayTmLne);
+            //clickOn(expandTdayTmLne);
+            JavascriptExecutor jse = (JavascriptExecutor)SharedSD.getDriver();
+            jse.executeScript("window.scrollBy(0,800)");
+            //WebElement expand = SharedSD.getDriver().findElement(By.xpath("//body[@class='forecast']/div[@id='week']/a[1]/span[3]"));
+            jse.executeScript("arguments[0].click();",expandTdayTmLne);
+
         }
 
         public String getLowerMinTemp (){

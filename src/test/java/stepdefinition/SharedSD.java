@@ -19,7 +19,7 @@ public class SharedSD {
 		System.setProperty("webdriver.chrome.driver",
 				configReader.getChromeDriverPath());
 		driver = new ChromeDriver();
-
+driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(configReader.getUrl());
 	}
@@ -28,7 +28,7 @@ public class SharedSD {
 	public static void after() {
 		if (driver != null) {
 			driver.manage().deleteAllCookies();
-			driver.quit();
+			//driver.quit();
 		}
 	}
 
